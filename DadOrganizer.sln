@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DadOrganizer", "DadOrganizer.csproj", "{C8A2CAD4-22A3-4E94-A61A-7D4EB6768570}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DadOrganizerRepo", "..\DadOrganizerRepo\DadOrganizerRepo.csproj", "{FC6CB98A-F463-4E29-AB04-1A25F52FC283}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8A2CAD4-22A3-4E94-A61A-7D4EB6768570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A2CAD4-22A3-4E94-A61A-7D4EB6768570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A2CAD4-22A3-4E94-A61A-7D4EB6768570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A2CAD4-22A3-4E94-A61A-7D4EB6768570}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC6CB98A-F463-4E29-AB04-1A25F52FC283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC6CB98A-F463-4E29-AB04-1A25F52FC283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC6CB98A-F463-4E29-AB04-1A25F52FC283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC6CB98A-F463-4E29-AB04-1A25F52FC283}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB46AC53-95E5-42A6-B471-913D865A4AB7}
+	EndGlobalSection
+EndGlobal
