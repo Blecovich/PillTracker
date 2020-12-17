@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DadOrganizer
+namespace TreatmentTracker
 {
 
 

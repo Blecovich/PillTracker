@@ -1,12 +1,8 @@
-﻿using DadOrganizerRepo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using System;
+using TreatmentTrackerRepo;
+using TreatmentTrackerRepo.DataClasses; 
 
-namespace DadOrganizer
+namespace TreatmentTracker
 {
     public partial class API : System.Web.UI.Page
     {
