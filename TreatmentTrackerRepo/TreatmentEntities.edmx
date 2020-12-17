@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TreatmentEntitesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="medication_schedule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="administered" Type="bit" />
+          <Property Name="treatment_id" Type="int" />
+          <Property Name="administered_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="treatment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="treatment_description" Type="nvarchar" MaxLength="50" />
+          <Property Name="every_x_hours" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="max_per_day" Type="int" />
+          <Property Name="start_time" Type="bigint" />
+        </EntityType>
+        <EntityContainer Name="TreatmentEntitesModelStoreContainer">
+          <EntitySet Name="medication_schedule" EntityType="Self.medication_schedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="treatment" EntityType="Self.treatment" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TreatmentEntitesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="schedule_DL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="administered" Type="Boolean" />
+          <Property Name="treatment_id" Type="Int32" />
+          <Property Name="administered_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="treatment_DL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="treatment_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="every_x_hours" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="max_per_day" Type="Int32" />
+          <Property Name="start_time" Type="Int64" />
+        </EntityType>
+        <EntityContainer Name="TreatmentEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="schedule_DL" EntityType="TreatmentEntitesModel.schedule_DL" />
+          <EntitySet Name="treatment_DL" EntityType="TreatmentEntitesModel.treatment_DL" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TreatmentEntitesModelStoreContainer" CdmEntityContainer="TreatmentEntities">
+          <EntitySetMapping Name="schedule_DL">
+            <EntityTypeMapping TypeName="TreatmentEntitesModel.schedule_DL">
+              <MappingFragment StoreEntitySet="medication_schedule">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="administered" ColumnName="administered" />
+                <ScalarProperty Name="treatment_id" ColumnName="treatment_id" />
+                <ScalarProperty Name="administered_date" ColumnName="administered_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="treatment_DL">
+            <EntityTypeMapping TypeName="TreatmentEntitesModel.treatment_DL">
+              <MappingFragment StoreEntitySet="treatment">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="treatment_description" ColumnName="treatment_description" />
+                <ScalarProperty Name="every_x_hours" ColumnName="every_x_hours" />
+                <ScalarProperty Name="max_per_day" ColumnName="max_per_day" />
+                <ScalarProperty Name="start_time" ColumnName="start_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
