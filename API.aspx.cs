@@ -10,19 +10,17 @@ namespace DadOrganizer
 {
     public partial class API : System.Web.UI.Page
     {
-        ScheduleRepo scheduler = new ScheduleRepo();
+        readonly ScheduleRepo _scheduler = new ScheduleRepo();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["action"] == "administer")
+            if (Request.QueryString["action"] != "administer") return;
+            try
             {
-                try
-                {
-                    Response.Write(AdministerTreatment(Convert.ToInt32((Request.QueryString["id"]))));
-                }
-                catch (Exception exc)
-                {
-                    Response.Write(exc.Message);
-                }
+                Response.Write(AdministerTreatment(Convert.ToInt32((Request.QueryString["id"]))));
+            }
+            catch (Exception exc)
+            {
+                Response.Write(exc.Message);
             }
         }
 
@@ -30,7 +28,7 @@ namespace DadOrganizer
         {
             try
             {
-                scheduler.AdministerTreatment(id);  
+                _scheduler.AdministerTreatment(id);  
             }
             catch (Exception e)
             {

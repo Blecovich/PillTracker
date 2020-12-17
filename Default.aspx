@@ -14,23 +14,11 @@
         }
 
         .card {
-            background-color: aliceblue;
+            background-color: #f0f8ff;
         }
 
         .hidden {
             display: none;
-        }
-
-        .cardholder:nth-child(1) {
-        }
-
-        .cardholder:nth-child(1) {
-        }
-
-        .cardholder:nth-child(1) {
-        }
-
-        .cardholder:nth-child(1) {
         }
     </style>
 </head>
