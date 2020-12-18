@@ -5,10 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Schedule</title>
+    <script src="Scripts/jquery-3.4.1.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-    <style>
+    <style type="text/css">
         body {
             background-color: #27472A;
         }
@@ -21,6 +22,13 @@
             display: none;
         }
     </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.ajax({
+                url: "/api/Treatment/"
+            });
+        })
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -52,7 +60,7 @@
                                         <%# Convert.ToDateTime(Eval("TreatmentTime")).ToShortTimeString() %>
                                     </h3>
                                     <span class="font-weight-bold treatmentName"><%# Eval("TreatmentName") %></span>
-                                    <span class="hidden scheduleID"><%# Eval("Id") %></%#></span
+                                    <span class="hidden scheduleID"><%# Eval("Id") %> </span>
                                     <span><%# Eval("TreatmentTime") %></span>
                                 </div>
                             </div>
@@ -80,11 +88,11 @@
                 url: "/API.aspx?action=administer&id=" + id,
                 success: function (result) {
                     swal({
-                        text: event.target.parentElement.querySelector('.treatmentName').innerText + ' ' + result,
-                        button: {
-                            classname: "btn btn-success",
+                            text: event.target.parentElement.querySelector('.treatmentName').innerText + ' ' + result,
+                            button: {
+                                classname: "btn btn-success",
+                            },
                         },
-                    },
                     ).then(function (inputValue) {
                         $('#btnWakeUp').click();
                     });
